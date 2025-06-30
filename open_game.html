@@ -1,0 +1,66 @@
+<!-- open_game.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2x7 Game Grid</title>
+  <link rel="stylesheet" href="style.css"> <!-- Main game styles -->
+  <link rel="stylesheet" href="howtoplay.css"> <!-- Modal-specific styles -->
+</head>
+<body>
+
+  <div class="game-container">
+    <div id="setup-screen">
+      <button id="open-game">Start Game</button>
+      <button id="how-to-play-btn">How to Play</button>
+    </div>
+  </div>
+
+  <!-- How to Play Modal -->
+  <div id="how-to-play-modal" style="display: none;">
+    <div class="modal-content">
+      <span id="close-modal-btn">&times;</span>
+      <h2>How to Play</h2>
+      <p>Welcome to the game! Here’s how you can play:</p>
+      <ul>
+        <li><strong>Goal:</strong> Capture as many stones as possible by distributing them in the right order.</li>
+        <li><strong>Players:</strong> Two players take turns to play.</li>
+        <li><strong>Start:</strong> Enter Player 1 and Player 2 names to begin.</li>
+        <li><strong>Taking Turns:</strong> On your turn, click on a box with stones to distribute them.</li>
+        <li><strong>Distributing Stones:</strong> Distribute stones in the boxes following a counter-clockwise direction.</li>
+        <li><strong>Capture Stones:</strong> If a box has exactly 4 stones after distributing, it is captured and your score increases by 4 points.</li>
+        <li><strong>End of Turn:</strong> Once all stones are distributed, your turn ends, and the other player starts.</li>
+        <li><strong>Winning:</strong> The player with the most stones captured at the end of the game wins!At the end interesting Gameplay is also there.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Show modal when the "How to Play" button is clicked
+    document.getElementById("how-to-play-btn").addEventListener("click", () => {
+      document.getElementById("how-to-play-modal").style.display = "flex";
+    });
+
+    // Close modal when the close button (×) is clicked
+    document.getElementById("close-modal-btn").addEventListener("click", () => {
+      document.getElementById("how-to-play-modal").style.display = "none";
+    });
+
+    // Close modal if the user clicks anywhere outside the modal content
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("how-to-play-modal")) {
+        document.getElementById("how-to-play-modal").style.display = "none";
+      }
+    };
+
+    // Redirect to game.html when "Start Game" button is clicked
+    document.getElementById("open-game").addEventListener("click", () => {
+      window.location.href = "game.html"; // Redirect to game.html
+    });
+  </script>
+
+</body>
+</html>

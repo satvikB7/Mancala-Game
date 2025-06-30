@@ -1,0 +1,98 @@
+/* Modal Background */
+#how-to-play-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* Center the modal */
+    align-items: center; /* Center the modal vertically */
+    z-index: 999; /* Ensure the modal is on top */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Smooth fade and scale transition */
+    transform: scale(0.8); /* Start scaled down */
+}
+
+/* Show Modal with smooth transition */
+#how-to-play-modal.show {
+    opacity: 1; /* Visible */
+    pointer-events: auto; /* Enable interaction */
+    transform: scale(1); /* Scale up to normal size */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #1d1f20; /* Dark background for the content */
+    padding: 50px; /* Increase padding to make the content more spacious */
+    border-radius: 10px;
+    width: 85%; /* Increase width */
+    max-width: 900px; /* Increase max-width for a much larger modal */
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 5px 20px rgba(0, 255, 255, 0.5); /* Neon glow effect */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-in-out; /* Smooth scaling and glow transition */
+}
+
+/* Modal Header */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #00ff99; /* Neon green text */
+    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8); /* Glowing text effect */
+}
+
+/* Modal Paragraph */
+p {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Modal List */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    font-size: 18px;
+    color: #e0e0e0; /* Light gray color for list items */
+    margin: 10px 0;
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+}
+
+li strong {
+    color: #00ff99; /* Neon green for bold text */
+    font-weight: bold;
+}
+
+/* Close Button */
+#close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #ff0000; /* Red close button */
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#close-modal-btn:hover {
+    color: #ff6666; /* Lighter red when hovered */
+}
+
+/* Add a glowing effect when modal content is in focus */
+.modal-content:focus-within {
+    box-shadow: 0px 5px 30px rgba(0, 255, 255, 0.8); /* Increased neon glow when modal is active */
+}
+
+/* Hover effect for the modal content */
+.modal-content:hover {
+    transform: scale(1.05); /* Slight scale-up effect */
+}
+
+/* Transition for the background */
+#how-to-play-modal.show {
+    background: rgba(0, 0, 0, 0.85); /* Darker overlay for better contrast */
+}

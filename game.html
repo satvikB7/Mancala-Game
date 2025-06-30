@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2x7 Game Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="content">
+      <div id="player-name-screen">
+        <h3 id="prompt-text">Enter Player 1 Name:</h3>
+        <input type="text" id="player-name" />
+        <button id="next-btn">Next</button>
+      </div>
+      
+      <div id="game-screen" style="display: none;">
+  
+        <!-- Timer -->
+        <div id="timer-container">
+          <p id="timer">Time Left: 10s</p>
+        </div>
+  
+        <!-- Power-Up Button -->
+        <div id="power-up-container">
+          <button id="double-stones-btn" onclick="activateDoubleStones()" disabled>Double Stones</button>
+          <div id="double-stones-tooltip" class="tooltip">Doubles the stones for the next turn</div>
+  
+          <button id="sudden-storm-btn" onclick="activateSuddenStorm()" disabled>Sudden Storm</button>
+          <div id="sudden-storm-tooltip" class="tooltip">Shuffles the stones in the grid</div>
+          
+          <p id="power-up-status"></p>
+        </div>
+  
+        <button id="back-btn">Back</button>
+        <h3 id="player-turn"></h3>
+        <div id="arrow-indicator" class="arrow-indicator" style="display: none;">
+          <div class="arrow" id="player1-row-arrow">Player 1 Row -------></div><br><br><br><br><br>
+          <div class="arrow" id="player2-row-arrow">Player 2 Row -------></div>
+        </div>
+        <div class="grid">
+          <!-- Grid cells will be generated dynamically -->
+        </div>
+        <div id="game-controls">
+          <!-- Remove the number input -->
+        </div>
+        <div id="scores">
+          <p id="player1-score">Player 1 Score: 0</p>
+          <p id="player2-score">Player 2 Score: 0</p>
+        </div>
+        <button id="reset-btn">Reset Game</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
